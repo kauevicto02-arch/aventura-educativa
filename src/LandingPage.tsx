@@ -16,7 +16,7 @@ declare global {
   }
 }
 
-const CHECKOUT_URL = "https://pay.hotmart.com/REEMPLAZAR-CON-TU-LINK";
+const CHECKOUT_URL = "https://pay.hotmart.com/V107201272V?checkoutMode=10";
 const META_PIXEL_ID = "1706278740498413";
 
 // Guards a nivel de módulo para evitar eventos duplicados (StrictMode / remounts)
@@ -833,7 +833,7 @@ export default function LandingPage() {
           </p>
 
           <span className="text-base font-black text-[#F5F1E6]/40 line-through">
-            US$ 49
+            MX$ 199
           </span>
         </div>
 
@@ -843,7 +843,7 @@ export default function LandingPage() {
           </p>
 
           <span className="font-display text-4xl font-black text-[#F4B93E] drop-shadow-md">
-            US$ 19
+            MX$ 99
           </span>
         </div>
 
