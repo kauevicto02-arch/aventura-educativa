@@ -843,7 +843,7 @@ export default function LandingPage() {
           </p>
 
           <span className="font-display text-4xl font-black text-[#F4B93E] drop-shadow-md">
-            MX$ 99
+            MX$ 65.50
           </span>
         </div>
 
