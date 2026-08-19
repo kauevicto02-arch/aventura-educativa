@@ -16,7 +16,8 @@ declare global {
   }
 }
 
-const CHECKOUT_URL = "https://pay.hotmart.com/V107201272V?checkoutMode=10";
+const CHECKOUT_URL =
+  "https://pay.hotmart.com/V107201272V?checkoutMode=10&sck=facebook";
 const META_PIXEL_ID = "1706278740498413";
 
 // Guards a nivel de módulo para evitar eventos duplicados (StrictMode / remounts)
@@ -199,9 +200,19 @@ export default function LandingPage() {
   }, []);
 
   const handleCheckout = () => {
-    if (window.fbq) window.fbq("track", "InitiateCheckout");
-    window.location.href = CHECKOUT_URL;
-  };
+  if (window.fbq) {
+    window.fbq("track", "InitiateCheckout");
+  }
+
+  const currentParams = new URLSearchParams(window.location.search);
+  const checkoutUrl = new URL(CHECKOUT_URL);
+
+  currentParams.forEach((value, key) => {
+    checkoutUrl.searchParams.set(key, value);
+  });
+
+  window.location.href = checkoutUrl.toString();
+};
 
   const faqs = [
     {
